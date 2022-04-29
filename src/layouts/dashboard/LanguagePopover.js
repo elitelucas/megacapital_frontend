@@ -63,23 +63,26 @@ export default function LanguagePopover() {
         ref={anchorRef}
         onClick={handleOpen}
         className="p-2 rounded bg-dark btn text-white shadow-0 position-relative"
-        width="100px" height="42px"
+        // width="100px" height="42px"
       >
-        <Grid container direction="row">
-        <Grid item sm="3" component="img" src={CHAINS.find((ele) => ele.index === curID)?.icon} />
-        <Grid item sm="8">{CHAINS.find((ele) => ele.index === curID)?.label}</Grid></Grid>
+        <Stack direction="row" alignItems="center" spacing={1}>
+            <Box component="img" src={CHAINS.find((ele) => ele.index === curID)?.icon} sx={{ width: 20 }} />
+            <Box variant="body2">{CHAINS.find((ele) => ele.index === curID)?.label}</Box>
+            <Box component="img" src={"my_public/images/angle_down.png"} sx={{ width: 20 }} />
+        </Stack>
       </Box>
-      <MenuPopover open={open} onClose={handleClose} anchorEl={anchorRef.current}>
-        <Box sx={{ py: 1 }}>
+      <MenuPopover open={open} onClose={handleClose} anchorEl={anchorRef.current} backgroundColor="#232323">
+        <Box sx={{ py: 1 }}   backgroundColor="#232323">
           {CHAINS.map((option) => (
             <MenuItem
               key={option.value}
               // selected={option.value === network}
+              backgroundColor="#232323"
               onClick={() => handleClose(option.index)}
               sx={{ py: 1, px: 2.5 }}
             >
               <Stack direction="row" alignItems="center" spacing={1}>
-                <Box component="img" alt={option.label} src={option.icon} sx={{ width: 20 }} />
+                <Box component="img" alt={option.label} src={option.icon} sx={{ width: 20 }}/>
                 <Box variant="body2">{option.label}</Box>
               </Stack>
             </MenuItem>

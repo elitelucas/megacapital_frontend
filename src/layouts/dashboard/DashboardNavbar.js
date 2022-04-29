@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 import menu2Fill from '@iconify/icons-eva/menu-2-fill';
 // material
 import { alpha, styled } from '@mui/material/styles';
-import { Grid, Box, Stack, AppBar, Toolbar, IconButton, Link, Menu, MenuItem } from '@mui/material';
+import { Grid, Box, Stack, AppBar, Toolbar, IconButton, Link, Menu, MenuItem, Popover } from '@mui/material';
 // hooks
 import useCollapseDrawer from '../../hooks/useCollapseDrawer';
 // components
@@ -26,6 +26,7 @@ const APPBAR_DESKTOP = 92;
 const RootStyle = styled(AppBar)(({ theme }) => ({
   boxShadow: 'none',
   backdropFilter: 'blur(6px)',
+  backgroundColor:"#171819",
   WebkitBackdropFilter: 'blur(6px)', // Fix on Mobile
   backgroundColor: alpha(theme.palette.background.default, 1),
   [theme.breakpoints.up('lg')]: {
@@ -35,10 +36,12 @@ const RootStyle = styled(AppBar)(({ theme }) => ({
 
 const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   minHeight: APPBAR_MOBILE,
+  backgroundColor:"#171819",
   [theme.breakpoints.up('lg')]: {
     minHeight: APPBAR_DESKTOP,
     padding: theme.spacing(0, 5)
-  }
+  },
+  borderBottom:"2px solid white"
 }));
 
 // ----------------------------------------------------------------------
@@ -60,16 +63,17 @@ export default function DashboardNavbar({ onOpenSidebar }) {
   return (
     <RootStyle
       sx={{
+        backgroundColor:"#171819",
         paddingLeft: '13%',
         paddingRight: '13%',
         ...(isCollapse && {
           width: { lg: `calc(100% - ${COLLAPSE_WIDTH}px)` }
-        })
+        }),
       }} 
     >
       
       <ToolbarStyle id="navbarSupportedContent">
-        <MHidden width="mdUp">
+        <MHidden width="mdUp" paddingLeft="13%" paddingRight="13%">
           <Grid container sx={{position:'relative'}}>
           <IconButton sx={{ mr: 1, color: 'text.primary' }}
             id="basic-button"
@@ -80,23 +84,31 @@ export default function DashboardNavbar({ onOpenSidebar }) {
              <Icon icon={menu2Fill} />
           </IconButton>
           <Box component="a" position="absolute" left="40%" top="-10px" width="80%" href="/home"><Box component="img" src="/logo.png" sx={{ width: '60px' }}></Box></Box>
-          <Box sx={{position:'absolute', right:'10px'}}><LanguagePopover /></Box>
-          <Menu
+          <Box sx={{position:'absolute', right:'0px'}}><LanguagePopover /></Box>
+          <Popover
             id="basic-menu"
-            anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button',
+            anchorReference="anchorPosition"
+            anchorPosition={{ top: 0, left: 0 }}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
             }}>
           {/* <MenuItem onClick={handleClose}>Profile</MenuItem> */}
-            <NavMenuItem onClick={handleClose} title="Deals" link="/idodeals" />
-            <NavMenuItem onClick={handleClose} title="Pools" link="/stakepad" />
-            <NavMenuItem onClick={handleClose} title="Vote" link="/vote" />
-            <NavMenuItem onClick={handleClose} title="Dashboard" link="/dashboard" />
-            <NavMenuItem onClick={handleClose} title="Blog" link="/blog" />
-            <NavMenuItem onClick={handleClose} title="Help Center" link="/helpcenter" />
-          </Menu>
+            <Box width = "100%" height="100%" backgroundColor="#000000">
+              <NavMenuItem onClick={handleClose} title="Deals" link="/idodeals" />
+              <NavMenuItem onClick={handleClose} title="Pools" link="/stakepad" />
+              <NavMenuItem onClick={handleClose} title="Vote" link="/vote" />
+              <NavMenuItem onClick={handleClose} title="Dashboard" link="/dashboard" />
+              <NavMenuItem onClick={handleClose} title="Blog" link="/blog" />
+              <NavMenuItem onClick={handleClose} title="Help Center" link="/helpcenter" />
+            </Box>
+          </Popover>
           </Grid>
         </MHidden>
         {/* <Searchbar /> */}

@@ -25,17 +25,17 @@ export default function Token(){
           <Grid item sm={6}>
             <Typography variant="h4" component="div" fontFamily={'Arial'} sx={{ color: '#56C5FF', marginBottom: '25px' }}>
               Key Features
-              <Box  component="img"  src={"my_public/images/border.png"} width='30%'></Box>
+              <Box  component="img"  src={"my_public/images/border.png"} width='25%'></Box>
             </Typography>
-            <ul style={{ fontSize: '21px', color:'white'}}>
-              <li>Incubator Launchpad</li>
-              <li>Multi-chain networks</li>
-              <li>Nft pad</li>
-              <li>VC Deals (Private and seed)</li>
-              <li>Stakepad</li>
-              <li>Yield Farming</li>
-              <li>Buyback & Burn Program</li>
-              <li>Mega insurance fund</li>
+            <ul style={{ fontSize: '25px', color:'#56C5FF'}}>
+              <li><span style={{color:"white"}}>Incubator Launchpad</span></li>
+              <li><span style={{color:"white"}}>Multi-chain networks</span></li>
+              <li><span style={{color:"white"}}>Nft pad</span></li>
+              <li><span style={{color:"white"}}>VC Deals (Private and seed)</span></li>
+              <li><span style={{color:"white"}}>Stakepad</span></li>
+              <li><span style={{color:"white"}}>Yield Farming</span></li>
+              <li><span style={{color:"white"}}>Buyback & Burn Program</span></li>
+              <li><span style={{color:"white"}}>Mega insurance fund</span></li>
             </ul>
           </Grid>
           <Grid item sm={6} style={{ textAlign: 'center' }}>
@@ -55,11 +55,11 @@ export default function Token(){
           <Grid item sm={6}>
             <Typography fontFamily={'Segoe UI'} variant="h3" component="div" sx={{ color: '#56C5FF', marginBottom: '25px' }}>
               Token Distribution
-              <Box  component="img"  src={"my_public/images/border.png"} width='50%'></Box>
+              <Box  component="img"  src={"my_public/images/border.png"} width='30%'></Box>
             </Typography>
             <Grid container spacing={2}>
               <Grid item sm={6}>
-                <ul style={{ fontSize: '18px', color:'white' }}>
+                <ul style={{ fontSize: '25px', color:'white' }}>
                   <li>Seed sale 9%</li>
                   <li>Private sale 12%</li>
                   <li>Public sale 3%</li>
@@ -68,7 +68,7 @@ export default function Token(){
                 </ul>
               </Grid>
               <Grid item sm={6}>
-                <ul style={{ fontSize: '18px', color:'white' }}>
+                <ul style={{ fontSize: '25px', color:'white' }}>
                   <li>Marketing 10%</li>
                   <li>Development 6%</li>
                   <li>Staking Rewards 25 %</li>
@@ -77,13 +77,13 @@ export default function Token(){
                 </ul>
               </Grid>
             </Grid>
-            <ul style={{ fontSize: '18px', marginTop: '20px', color:'white' }}>
-              <li>Initial Market cap $ 148,000</li>                  
-              <li>Dex Listing Price 0.006 BUSD</li>                  
-              <li>TGE circulating supply: 7.4 % (including liquidity)</li>                  
-              <li>Tokens sold at TGE 24%</li>                  
-              <li>Fully Diluted Market Cap $6,000,000</li>                  
-              <li>TOTAL SUPPLY 1,000,000,000</li>                  
+            <ul style={{ fontSize: '25px', marginTop: '20px', color:'#56C5FF' }}>
+              <li><span style={{color:"white"}}>Initial Market cap $ 148,000</span></li>                  
+              <li><span style={{color:"white"}}>Dex Listing Price 0.006 BUSD</span></li>                  
+              <li><span style={{color:"white"}}>TGE circulating supply: 7.4 % (including liquidity)</span></li>                  
+              <li><span style={{color:"white"}}>Tokens sold at TGE 24%</span></li>                  
+              <li><span style={{color:"white"}}>Fully Diluted Market Cap $6,000,000</span></li>                  
+              <li><span style={{color:"white"}}>TOTAL SUPPLY 1,000,000,000</span></li>                  
             </ul>
 
 
@@ -95,13 +95,13 @@ export default function Token(){
 
 function MyChart1(props){
     const data = {
-      series: [9, 12, 3, 5, 14, 10, 6, 25, 10, 6],
+      series: [25, 14, 12, 10, 10, 9, 6, 6, 5, 3],
       options: {
         chart: {
           width: '100%',
           type: 'pie',
         },
-        labels: ["Seed sale", "Private sale", "Public sale", "Liquidity & Market Making", "Team", "Marketing", "Development", "Staking Rewards", "Reserve", "Advisors"],
+        labels: ["Staking Rewards", "Team", "Private sale", "Reserve", "Marketing", "Seed sale", "Advisors", "Development", "Liquidity & Market Making", "Public sale"],
         theme: {
           monochrome: {
             enabled: true
@@ -128,14 +128,13 @@ function MyChart1(props){
         }
       },  
     };
-    const COLLAPSE_WIDTH = 50;
+    const COLLAPSE_WIDTH = 118;
     return (
       <div id="chart">
         <ReactApexChart options={data.options} series={data.series} type="pie" />
         {/* <Box position="absolute" borderRadius="50%" width="100px" height="100px" top={ `calc(50% - ${COLLAPSE_WIDTH}px)`} left={ `calc(50% - ${COLLAPSE_WIDTH}px)`} padding="10px" style={{backgroundColor:"white", justifyContent: "center", alignContent:"center", display:"flex"}}> */}
-        <Box position="absolute" borderRadius="50%" width="12%" height="16%" top="43%" left="44%" padding="2%" style={{backgroundColor:"white", justifyContent: "center", alignContent:"center", display:"flex"}}>
-          <Box padding="6%" borderRadius="50%" border="2px solid #24B6E6" style={{backgroundColor:"white", justifyContent: "center", alignContent:"center", display:"flex"}}>
-            <Box component="img" src="my_public/images/logo.png"></Box></Box></Box>
+        <Box position="absolute" top={ `calc(50% - ${COLLAPSE_WIDTH}px)`} left={ `calc(50% - ${COLLAPSE_WIDTH}px)`} style={{justifyContent: "center", alignContent:"center", display:"flex"}}>
+            <Box component="img" src="my_public/images/circle_mega.png"></Box></Box>
         {/* <Box borderRadius="50%" width="12%" justifyContent={"center"} display="flex" align="center" style={{backgroundColor:"white"}}><Box component="img" src="my_public/images/logo.png"></Box></Box> */}
       </div>
     );

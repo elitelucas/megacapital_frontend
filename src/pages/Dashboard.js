@@ -125,8 +125,8 @@ export default function Stakepad() {
                 <Grid marginTop="20px" color="#56C5FF" fontSize="34px">
                     My Projects
                 </Grid>
-                <MyProjectCard></MyProjectCard>
-                <MyProjectCard></MyProjectCard>
+                <MyProjectCard angle="down"></MyProjectCard>
+                <MyProjectCard angle="up"></MyProjectCard>
                 <MyLocationCard></MyLocationCard>
             </Grid>
             </>
@@ -169,31 +169,35 @@ function ProgressCard(){
             <Grid item  padding="10px"><Box component="img" width="100%" height="100px" position="relative" src="my_public/images/bit.png"></Box></Grid>
             <Grid item  padding="10px" display="flex" position="relative" marginTop="10px">
                 <Box fontSize="19px">MEGA</Box>
-                <Box position="absolute" padding="5px 10px 5px 10px" right="12px" style={{backgroundColor:"rgba(255, 255, 255, 0.1)", color:"white"}}>Alpha</Box>
+                <Box position="absolute" padding="5px 10px 5px 10px" borderRadius={0.5} right="12px" style={{backgroundColor:"rgba(255, 255, 255, 0.1)", color:"white"}}>Alpha</Box>
             </Grid>
             <Grid item marginTop="10px"><Box component="button" border="none" borderRadius={1} height="30px" width="100%" style={{backgroundColor:"#56C5FF", color:"white"}}>INFO</Box></Grid>
         </Grid>
         <Grid container item width="73%" marginLeft="2%" paddingLeft="20px" style={{backgroundColor:"#232323", borderRadius:5}}>
             <Grid md="8"> <Box marginTop="20px" component="h3" color="#56C5FF">Progress</Box></Grid>
             <Grid container direction="row">
-                <Grid item md="2.4"><MySlideBar></MySlideBar></Grid>
-                <Grid item md="2.4"><MySlideBar></MySlideBar></Grid>
-                <Grid item md="2.4"><MySlideBar></MySlideBar></Grid>
-                <Grid item md="2.4"><MySlideBar></MySlideBar></Grid>
-                <Grid item md="2.4"><MySlideBar></MySlideBar></Grid>
+                <Grid item md="2.4"><MySlideBar current={100} title="Alpha"></MySlideBar></Grid>
+                <Grid item md="2.4"><MySlideBar current={100} title="Beta"></MySlideBar></Grid>
+                <Grid item md="2.4"><MySlideBar current={100} title="Gamma"></MySlideBar></Grid>
+                <Grid item md="2.4"><MySlideBar current={20} title="Epilson"></MySlideBar></Grid>
+                <Grid item md="2.4"><MySlideBar current={30} title="Zeta"></MySlideBar></Grid>
             </Grid>
         </Grid>
     </Grid>
     );
 }
-function MySlideBar(){
+function MySlideBar(props){
     return(
         <>
         <Box sx={{ width: "97%" }}>
-        <input type="range" id="vol" name="vol" min="0" max="100" style={{width:'100%'}} backgroundColor="white"/>
+        
+        <Box position="relative" display="flex">
+            <Box width="100%" height="10px" borderRadius={2} backgroundColor="white"/>
+            <Box position="absolute" left="0px" borderRadius={2} height="10px" width={`calc(${props.current}/100*100%)`} backgroundColor="#56C5FF"/>
+        </Box>
         </Box>
         <Box position="relative">
-            <Box position="absolute" left="1px" color="white">Alpha</Box>
+            <Box position="absolute" left="1px" color="white">{props.title}</Box>
             <Box position="absolute" right="15px" color="#696974">0 MEGA</Box>
         </Box>
         </>
@@ -237,7 +241,7 @@ function ProjectCard(props){
         </>
     );
 }
-function MyProjectCard(){
+function MyProjectCard(props){
     return(
         <>
         <Grid container direction="row" bgcolor={"#232323"} borderRadius={1} padding="15px" marginTop="20px">
@@ -261,7 +265,8 @@ function MyProjectCard(){
                 <Grid color="white">300</Grid>
             </Grid>
             <Grid item md="3" align="center" justifyCenter="center">
-                <i class="Nft-arrow fa-solid fa-angle-down text-info mx-5 pt-4"></i>
+                {props.angle === "down" ? <i class="Nft-arrow fa-solid fa-angle-down text-info mx-5 pt-4"></i>
+                : <i class="Nft-arrow fa-solid fa-angle-up text-info mx-5 pt-4"></i>}
             </Grid>
         </Grid>
         </>
@@ -271,9 +276,9 @@ function MyLocationCard(){
     return(
         <Grid container direction="row" bgcolor="#232323" width="100%" marginTop="30px" borderRadius={1}>
             <Grid container padding='15px'>
-                <Grid item sm="12" md="6" display="flex" justifyContent={'flex-start'}><Box component="h5" fontFamily={'system-ui'} color="#00BFFF">
+                <Grid item sm="12" md="6" display="flex" justifyContent={'flex-start'}><Box component="h5" fontFamily={'system-ui'} color="#56C5FF">
                     Your Location</Box></Grid>
-                <Grid item sm="12" md="6" display="flex" justifyContent={'flex-end'}><Box component="button" class="btn btn-info text-light" fontFamily={'system-ui'} padding="5px">Add token to metamask</Box></Grid>
+                <Grid item sm="12" md="6" display="flex" justifyContent={'flex-end'}><Box component="button" backgroundColor="#56C5FF" color="white" borderRadius={0.5} border="none" fontFamily={'system-ui'} padding="5px">Add token to metamask</Box></Grid>
             </Grid>
             <Grid container direction="row" bgcolor="rgba(86, 197, 255, 0.1)" height="40px" paddingTop="5px">
                 <Grid md="0.5" display="flex" justifyContent="center" color="white">No.</Grid>
@@ -284,20 +289,23 @@ function MyLocationCard(){
                 <Grid md="1.5" display="flex" justifyContent="center" color="white">Claimed</Grid>
                 <Grid md="1" display="flex" justifyContent="center" color="white">Action</Grid>
             </Grid>
-            <AllocationList/>
+            <AllocationList number={1}/>
+            <AllocationList number={2}/>
         </Grid>
     );
 }
-function AllocationList(){
+function AllocationList(props){
     return(
         <Grid container marginTop='10px' direction="row" height="40px"  fontSize="19px">
-            <Grid md="0.5" display="flex" justifyContent="center" color="white">1</Grid>
+            <Grid md="0.5" display="flex" justifyContent="center" color="white">{props.number}</Grid>
             <Grid md="1.5" display="flex" justifyContent="center" color="white">4000 GOLD</Grid>
             <Grid md="1.5" display="flex" justifyContent="center" color="white">10.00%</Grid>
             <Grid md="3" display="flex" justifyContent="center" color="white">22/02/2022 to 22/10/2022</Grid>
             <Grid md="3" display="flex" justifyContent="center" color="white">22/02/2022</Grid>
             <Grid md="1.5" display="flex" justifyContent="center" color="white">0.0000</Grid>
-            <Grid md="1" display="flex" justifyContent="center" bgColor="#303030" width="100%" color="#00BFFF">Claim</Grid>
+            <Grid md="1" display="flex" justifyContent="center" bgColor="#303030" width="100%" color="#56C5FF">
+                <Box  display="flex" justifyContent="center" backgroundColor="rgba(255, 255, 255, 0.1)" width="70px" height="30px">Claim</Box>
+            </Grid>
         </Grid>
     );
 }

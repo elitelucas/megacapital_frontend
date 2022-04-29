@@ -181,7 +181,7 @@ function PoolBox() {
       <Grid container spacing={2}>
         <Grid item sm={7}>
           <Box sx={{ display: 'flex', flexDirection: 'row', }}>
-            <Box component="img" src="img/catecoin.webp" sx={{ width: '50px', marginRight: '10px' }} />
+            <Box component="img" src="my_public/images/pool-logo.png" sx={{ width: '50px', marginRight: '10px' }} />
             <Box fontSize="20px" sx={{ marginTop: '10px', color:'white' }}>Megacapital</Box>
           </Box>
         </Grid>

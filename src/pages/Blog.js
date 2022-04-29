@@ -78,7 +78,23 @@ export default function Stakepad() {
         setTab(0);
     }
   }, [hash]);
-
+  const blogs = [
+    {
+      src:"my_public/images/blog-1.png",
+      title:"April 02, 2021",
+      body:"06 ways to do workout inside your home during Covid-19",
+    },
+    {
+      src:"my_public/images/blog-2.png",
+      title:"March 26, 2021",
+      body:"How is the pandemic affecting the way people work?",
+    },
+    {
+      src:"my_public/images/blog-3.png",
+      title:"March 19, 2021",
+      body:"The parent's balancing act: using the word 'No'",
+    },
+  ]
   return (
     <Page title="Megacapital" style={{backgroundColor:"#171819"}}>
       {/* <Container maxWidth='md'> */}
@@ -86,7 +102,7 @@ export default function Stakepad() {
           <Loader type="ThreeDots" color="#00BFFF" height={30} width={30} />
         ) : (
             <>
-            <Grid paddingLeft={'7%'} paddingRight={'7%'}>
+            <Grid paddingLeft={'11%'} paddingRight={'11%'}>
                 <Grid  align="center" justifyContent="center" paddingTop="30px">
                 <Box component="h1" class="text-info">News and Blog</Box>
                 </Grid>
@@ -95,24 +111,24 @@ export default function Stakepad() {
                     <Box position="absolute" right="5px"><Button class="btn btn-outline-info">Read all articles</Button></Box>
                 </Grid>
                 <Grid container spacing={2}>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[0]}></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[1]}></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[2]}></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[0]}></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[1]}></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[2]}></BlogCard></Grid>
                 </Grid>
                 <Grid width="100%" display="flex" position="relative" marginTop="30px" marginBottom="30px">
                     <Box component="h3" class="text-info" position="relative" left="5px">NEWS</Box>
                     <Box position="absolute" right="5px"><Button class="btn btn-outline-info">Read all articles</Button></Box>
                 </Grid>
                 <Grid container spacing={2}>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
-                    <Grid item md="4"><BlogCard src=""></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[0]}></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[1]}></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[2]}></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[0]}></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[1]}></BlogCard></Grid>
+                    <Grid item md="4"><BlogCard blog={blogs[2]}></BlogCard></Grid>
                 </Grid>
             </Grid>
             </>
@@ -146,9 +162,11 @@ function VoteCard(props){
 function BlogCard(props){
     return(
     <Grid container direction="column" sx={{width:"100%"}}>
-        <Box component="img" src="my_public/images/blog-1.png"></Box>
-        <Box color="#00BFFF" marginTop="10px"> April 02, 2021 </Box>
-        <Box marginTop="10px"  color="white"> 06 ways to do workout inside<br></br>your home during Covid-19 </Box>
+      <Box width="100%">
+        <Box component="img" width="100%" src={props.blog.src} borderRadius={1}></Box>
+        <Box color="#00BFFF" marginTop="10px"> {props.blog.title} </Box>
+        <Box marginTop="10px"  color="white"> {props.blog.body}  </Box>
+      </Box>
     </Grid>
     );
 }

@@ -110,11 +110,11 @@ function VoteCard(props){
     return(
             <Grid borderRadius={1} container bgcolor={'#232323'} direction="row" sx={{width:"100%"}} padding="20px 5px 20px 5px" marginTop="40px">
                 <Grid item container md="5" sm="12" direction="row" >
-                    <Box item component="img" src="img/catecoin.webp"></Box>
+                    <Box item component="img" src="my_public/images/logo.png"></Box>
                     <Box item fontSize="20px" marginTop='13px' marginLeft="10px"  color="white"> {props.name}</Box>
                 </Grid>
                 <Grid item md="3"sm="3" >
-                    <Box marginTop='13px' justifyContent="center" display="flex" fontSize="16px" borderRadius={1} paddingTop="2px" style={{backgroundColor:"rgba(255, 255, 255, 0.1)", width:"60px", height:'30px', color:"#56C5FF"}}>NFT</Box>
+                    <Box marginTop='13px' alignItems="center" justifyContent="center" display="flex" fontSize="16px" borderRadius={1} style={{backgroundColor:"rgba(255, 255, 255, 0.1)", width:"100px", height:'40px', color:"#56C5FF"}}>NFT</Box>
                 </Grid>
                 <Grid item md="1.5" sm="3">
                     <Button class="btn btn-info text-light mx-2 px-5 mt-2">YES</Button>

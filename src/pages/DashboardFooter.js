@@ -38,19 +38,19 @@ import {
               <Grid container item md={2} direction='column'>
                   <Grid item mg='5'><Box component="img" src="my_public/images/logo.png"></Box></Grid>
                   <Grid container item mg='2' direction={'row'} marginTop='40px' spacing={2}>
-                    <Box component="a" justifyContent="flex-start"  marginRight='12px' href={"https://discord.gg/dzjkkBfxug"} alignItems="center" sx={{width: 40, height: 40, borderRadius : '50%', bgcolor : "#3b3b3b", padding : '7px' }}>
+                    <Box component="a" justifyContent="flex-start"  marginRight='12px' marginTop="12px" style={{boxShadow: "inset -1px -1px 3px rgba(224, 229, 230, 0.29)"}} href={"https://discord.gg/dzjkkBfxug"} alignItems="center" sx={{width: 40, height: 40, borderRadius : '50%', bgcolor : "#232323", padding : '7px' }}>
                         <Box component="img"   src={"my_public/images/github.png"}/>
                     </Box>
-                    <Box component="a" justifyContent="flex-start"  marginRight='12px' href={"https://twitter.com/Megacapitals"} alignItems="center" sx={{width: 40, height: 40, borderRadius : '50%', bgcolor : "#3b3b3b", padding : '7px' }}>
+                    <Box component="a" justifyContent="flex-start"  marginRight='12px' marginTop="12px" style={{boxShadow: "inset -1px -1px 3px rgba(224, 229, 230, 0.29)"}} href={"https://twitter.com/Megacapitals"} alignItems="center" sx={{width: 40, height: 40, borderRadius : '50%', bgcolor : "#232323", padding : '7px' }}>
                         <Box  component="img"  src={"my_public/images/twitter.png"}/>
                     </Box>
-                    <Box component="a" justifyContent="flex-start"  marginRight='12px' href={"https://t.me/MegacapitalVC"} alignItems="center" sx={{width: 40, height: 40, borderRadius : '50%', bgcolor : "#3b3b3b", padding : '7px' }}>
+                    <Box component="a" justifyContent="flex-start"  marginRight='12px' marginTop="12px" style={{boxShadow: "inset -1px -1px 3px rgba(224, 229, 230, 0.29)"}} href={"https://t.me/MegacapitalVC"} alignItems="center" sx={{width: 40, height: 40, borderRadius : '50%', bgcolor : "#232323", padding : '7px' }}>
                         <Box  component="img"  src={"my_public/images/paper-plane.png"}/>
                     </Box>
-                    <Box component="a" justifyContent="flex-start"  marginRight='12px' href={"https://medium.com/@megacapital.io"} alignItems="center" sx={{width: 40, height: 40, borderRadius : '50%', bgcolor : "#3b3b3b", padding : '7px' }}>
+                    <Box component="a" justifyContent="flex-start"  marginRight='12px' marginTop="12px" style={{boxShadow: "inset -1px -1px 3px rgba(224, 229, 230, 0.29)"}} href={"https://medium.com/@megacapital.io"} alignItems="center" sx={{width: 40, height: 40, borderRadius : '50%', bgcolor : "#232323", padding : '7px' }}>
                         <Box component="img"   src={"my_public/images/medium (2).png"}/>
                     </Box>
-                    <Box component="a" justifyContent="flex-start"  marginRight='12px' marginTop="12px" href={"https://megacapital-io.gitbook.io/megacapital.io"} alignItems="center" sx={{width: 40, height: 40, borderRadius : '50%', bgcolor : "#3b3b3b", padding : '7px' }}>
+                    <Box component="a" justifyContent="flex-start"  marginRight='12px' marginTop="12px" style={{boxShadow: "inset -1px -1px 3px rgba(224, 229, 230, 0.29)"}} href={"https://megacapital-io.gitbook.io/megacapital.io"} alignItems="center" sx={{width: 40, height: 40, borderRadius : '50%', bgcolor : "#232323", padding : '7px' }}>
                         <Box component="img"   src={"my_public/images/gitbook-pngrepo-com.png"}/>
                     </Box>
                   </Grid>

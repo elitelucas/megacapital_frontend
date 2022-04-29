@@ -11,7 +11,7 @@ import {
 export default function ProjectName(props) {
 
   return (
-    <Box style={{backgroundColor:'#232323', textDecoration:"none"}} position="relative">
+    <Box style={{backgroundColor:'#232323', textDecoration:"none"}} borderRadius={1.5} position="relative">
         <Box>
             <Box display="flex" position="relative" component="img" src="my_public/images/projects (2).png" width="100%" height="100%"/>
             <Box position="absolute" top="3%" left="3%" borderRadius={0.5} color="white" bgcolor="#56c5ff" fontSize="12px" padding="5px">22/06/2022</Box>

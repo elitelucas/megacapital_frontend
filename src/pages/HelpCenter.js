@@ -25,8 +25,8 @@ export default function HelpCenter(props){
     ]
     return(
         <Page style={{backgroundColor:"#171819"}}>
-            <Grid paddingLeft="10%" paddingRight="10%" paddingTop="70px">
-                <Grid fontFamily="" color="#56C5FF" fontSize="48px" display="flex" justifyContent="center">
+            <Grid paddingLeft="12%" paddingRight="12%" paddingTop="70px">
+                <Grid color="#56C5FF" fontSize="48px" display="flex" justifyContent="center">
                     HOW CAN WE HELP YOU?
                 </Grid>
                 <Grid marginTop="30px" fontSize="30px" display="flex" color="white" justifyContent="center">

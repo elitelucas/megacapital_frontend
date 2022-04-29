@@ -67,36 +67,25 @@ export default function Invest(){
             </Box>
           </Grid>
           <Grid item xs={12} sm={7}>
-            <Grid>
-              <Box component="h3" fontFamily={'Segoe UI'}>
-                <Box component="span" sx={{ color: '#56C5FF' }} >MegaCapital Insurance Fund</Box>
+              <Box component="h3" fontFamily={'Segoe UI'}  marginBottom="50px">
+                <Box component="span" sx={{ color: '#56C5FF', borderBottom:"2px solid #56C5FF" }} paddingBottom="20px">MegaCapital Insurance Fund</Box>
               </Box>
-            </Grid>
-            <Grid >
-              <Box borderBottom={"2px solid #56C5FF"} marginBottom="20px" width="60%" marginTop="20px"></Box>
-            </Grid>
-            
-            <Grid>
-            <Box component="h5" maginTop="20px" class="text-white mx-3 text-justify" fontFamily={'Segoe UI'}>
+            <Box component="h3" maginTop="40px" class="text-white mx-3 text-justify" fontFamily={'Segoe UI'} padding="0px 30px">
               To ensure the safety and growth of its community, Megacapital is pleased to announce that it now has an insurance protection fund .
             </Box>
-            </Grid>
           </Grid>
         </Grid>
           <Grid container marginTop="50px" direction="row">
-            <Grid item sm={6}>
-              <Grid><Box component="h3" fontFamily={'Segoe UI'} sx={{ color: '#56C5FF' }} >Buyback And Burn</Box></Grid>
-              <Grid >
-                <Box borderBottom={"2px solid #56C5FF"} marginBottom="20px" width="50%" marginTop="20px"></Box>
-              </Grid>
-              <Grid>
-              <Box component="h5" maginTop="20px" class="text-white mx-3 text-justify" fontFamily={'Segoe UI'}>
-                A Share Of Funds Received During Each Token Sale Will Be Used To Buy Back Our Tokens And Burn Them, To Assure The Deflationary Nature Of Our Token.
-              </Box>
-              </Grid>
+          <Grid item sm={6}>
+            <Box component="h3" fontFamily={'Segoe UI'}  marginBottom="50px">
+              <Box component="span" sx={{ color: '#56C5FF', borderBottom:"2px solid #56C5FF" }} paddingBottom="20px">Buyback And Burn</Box>
+            </Box>
+            <Box component="h3" maginTop="20px" class="text-white mx-3 text-justify" fontFamily={'Segoe UI'}>
+              A Share Of Funds Received During Each Token Sale Will Be Used To Buy Back Our Tokens And Burn Them, To Assure The Deflationary Nature Of Our Token.
+            </Box>
           </Grid>
           <Grid item sm={6} justifyContent="center" display="flex">
-            <Box component="img" width="60%" src="my_public/images/money.png"></Box>
+            <Box component="img" width="50%" src="my_public/images/money.png"></Box>
           </Grid>
         </Grid>
       </Box>

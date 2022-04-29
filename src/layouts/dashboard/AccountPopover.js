@@ -51,16 +51,6 @@ export default function AccountPopover() {
   const web3Modal = new Web3Modal({
     providerOptions // required
   });
-  const connectWallet = async () => {
-    try {
-      const provider = await web3Modal.connect();
-      const library = new ethers.providers.Web3Provider(provider);
-      setProvider(provider);
-      setLibrary(library);
-    } catch (error) {
-      console.error(error);
-    }
-  };
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
     auth.login,
     auth.logout,

@@ -14,7 +14,7 @@ export default function StakePadCard() {
         <Grid container spacing={2}>
           <Grid item sm={7}>
             <Box sx={{ display: 'flex', flexDirection: 'row', }}>
-              <Box component="img" src="img/catecoin.webp" sx={{ width: '50px', marginRight: '10px' }} />
+              <Box component="img" src="my_public/images/logo.png" sx={{ width: '50px', marginRight: '10px' }} />
               <Box sx={{ marginTop: '10px', fontSize: 20, color:'white' }}>Megacapital</Box>
             </Box>
           </Grid>

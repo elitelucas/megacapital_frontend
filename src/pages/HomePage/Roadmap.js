@@ -30,16 +30,16 @@ export default function Roadmap(){
                     <h4>Q3</h4>
                     <p>2022</p>
                 </div>
-              <a href="#"><i class="fa-solid fa-forward text-light"></i></a> 
+              <a href="#"><i class="fa-solid fa-play text-light"></i><i class="fa-solid fa-play text-light"></i></a> 
                 <div class="road-map-text text-light">
                     <h4>Q4</h4>
                     <p>2022</p>
                 </div>
-              <a href="#"><i class="fa-solid fa-forward text-light"></i></a> 
+              <a href="#"><i class="fa-solid fa-play text-light"></i><i class="fa-solid fa-play text-light"></i><i class="fa-solid fa-play text-light"></i></a> 
             </div>
         </div>
-        <Grid container paddingLeft="21%">
-            <Grid item sm={3.5} paddingTop="7%" borderLeft="1px solid white" paddingLeft="3px">
+        <Grid container paddingLeft="20%">
+            <Grid item sm={3.1} paddingTop="7%" borderLeft="1px solid white" paddingLeft="3px">
               <p style={{color:'white'}}>Marketing And Media</p>
               <p style={{color:'white'}}>Private Sale</p>
               <p style={{color:'white'}}>IDO/ Public Sale</p>
